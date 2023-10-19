@@ -12,7 +12,7 @@ function Header() {
                 <Bars3Icon className="h-8 w-8 cursor-pointer" />
                 <Link href="/" prefetch={false}>
                     <h1 className="font-serif text-4xl text-center">
-                        The {" "} <span className='underline decoration-6 decoration-orange-400'>News</span> {" "} App
+                        The {" "} <span className='underline decoration-6 decoration-orange-400'>Topic</span> {" "} Trend
                     </h1>
                 </Link>
                 <div className="flex items-center justify-end space-x-2">
