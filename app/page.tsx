@@ -1,9 +1,15 @@
 import Image from 'next/image'
 
-export default function Home() {
+const news: NewsResponse = await fetchNews(categories.join(","))
+
+async function Home() {
   return (
     <main>
-
+{/* Newslist */}
     </main>
   )
 }
+
+
+
+export default Home
