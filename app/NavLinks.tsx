@@ -1,10 +1,20 @@
-import Link from "next/link";
+
+
+import { categories } from "@/constants";
+import NavLink from "./NavLink";
+
+
 
 function NavLinks() {
     return (
-        <Link href={`/news/${category}`} className={`navLink ${isActive && 'underline decoration-purple-400 underline-offset-4 font-bold text-lg'}`}>
-            {category}
-        </Link>
+        <nav>
+            {categories.map((category) => (
+                <NavLink
+                    key={category}
+                    category={category}
+                    isActive={false} />
+            ))}
+        </nav>
     )
 }
 
