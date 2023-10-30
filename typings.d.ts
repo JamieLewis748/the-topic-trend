@@ -1,4 +1,4 @@
-type Category =
+type Topic =
     | "coding"
     | "football"
     | "cooking"
