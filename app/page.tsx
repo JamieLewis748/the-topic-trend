@@ -1,13 +1,15 @@
   import { categories } from "@/constants";
   import fetchNews from "@/lib/fetchNews";
+  import Newslist from "./Newslist";
 
 
-  const news: NewsResponse = await fetchNews(categories.join(","))
-
+  
   async function Home() {
-    return (
+  const news: NewsResponse = await fetchNews()
+    
+  return (
       <main>
-  {/* Newslist */}
+        <Newslist news={news}/>
       </main>
     )
   }
