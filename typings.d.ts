@@ -23,4 +23,5 @@ type Article = {
     "votes": number;
     "article_img_url": string;
     "comment_count": number;
+    "body"?: string | null;
 }
