@@ -5,8 +5,7 @@
 
   
   async function Home() {
-  const news: NewsResponse = await fetchNews()
-    
+    const news: NewsResponse = await fetchNews()    
   return (
       <main>
         <Newslist news={news}/>
