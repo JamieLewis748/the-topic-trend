@@ -11,7 +11,7 @@ type Topic =
     | "technology";
 
 type NewsResponse = {
-    data: Article[];
+    articles: Article[];
 };
 
 type Article = {
