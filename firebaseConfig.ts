@@ -1,10 +1,11 @@
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID",
-  };
+  apiKey: "AIzaSyDkB3H-3qmom7lnZvoKbSrXDrr-z8LqT4I",
+  authDomain: "topic-trend.firebaseapp.com",
+  projectId: "topic-trend",
+  storageBucket: "topic-trend.appspot.com",
+  messagingSenderId: "18289207964",
+  appId: "1:18289207964:web:81762912d2c993b2c89b59",
+  measurementId: "G-9TMQSNMNRX"
+};
   
   export default firebaseConfig;
