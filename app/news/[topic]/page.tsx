@@ -9,7 +9,7 @@ type Props = {
 async function Topic({params: {topic}}: Props) {
 const news: NewsResponse = await fetchNews(topic)
 
-if (news.articles.length === 0) {
+if (!news || news.articles.length === 0) {
     return notFound();
   }
 
