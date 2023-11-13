@@ -1,9 +1,20 @@
-import fetchCommentsByArticleId from "@/lib/fetchCommentsByArticleId"
+import CommentCard from "./CommentCard";
 
-function CommentList() {
+
+type Props = {
+  comments: CommentList;
+};
+
+function CommentList({ comments }: Props) {
+
+
   return (
-    <div>This is where the comments will go</div>
-  )
-}
+    <main className="flex flex-col p-5 w-6xl">{
+      comments.map((comment: MyComment) => (
+        <CommentCard key={comment.comment_id} comment={comment} />
 
-export default CommentList
+      ))}
+    </main>
+  );
+}
+export default CommentList;
