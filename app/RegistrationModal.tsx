@@ -25,12 +25,16 @@ interface RegistrationModalProps {
     };
 
     return (
-    <div className="modal">
-        <div className="modal-content">
-        <h1>Please choose a username</h1>
-        <RegistrationForm onClose={onClose} onSubmit={handleRegistration} />
+    <div className="fixed inset-0 flex items-center justify-center z-50">
+        <div className="bg-slate-100 text-white p-8 rounded-lg shadow-lg w-100">
+        <RegistrationForm
+            onClose={() => {
+            onClose();
+            }}
+            onSubmit={handleRegistration}
+        />
         </div>
-    </div>
+    </div>  
     );
 };
 
