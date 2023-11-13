@@ -24,4 +24,18 @@ type Article = {
     "article_img_url": string;
     "comment_count": number;
     "body"?: string | null;
+};
+
+type CommentList = {
+    comments: MyComment[];
+};
+
+type MyComment = {
+    "comment_id": number;
+    "body": string;
+    "article_id": number;
+    "author": string;
+    "votes": number;
+    "created_at": string;
 }
+
