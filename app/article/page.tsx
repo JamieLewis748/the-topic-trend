@@ -7,15 +7,17 @@ type Props = {
     searchParams?: Article;
 };
 
-async function ArticlePage({ searchParams }: Props) {
-    if
-        (searchParams && Object.entries(searchParams).length === 0) {
+function ArticlePage({ searchParams }: Props) {
+    if (
+        (searchParams && Object.entries(searchParams).length === 0) ||
+        !searchParams
+    ) {
         return notFound();
     }
 
     const article: Article = searchParams;
 
-    const comments: MyComment[] = await fetchCommentsByArticleId(article.article_id);
+    // const comments: MyComment[] = await fetchCommentsByArticleId(article.article_id);
 
 
     return (
@@ -39,8 +41,8 @@ async function ArticlePage({ searchParams }: Props) {
                     <p className="pt-4 pb-20">{article.body}</p>
                 </div>
             </section>
-            <CommentAdder />
-            <CommentList comments={comments} />
+            {/* <CommentAdder />
+            <CommentList comments={comments} /> */}
             {/*add votes section*/}
         </article>
     );
