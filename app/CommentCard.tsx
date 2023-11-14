@@ -1,6 +1,6 @@
 'use client';
 import TimeAgo from "react-timeago";
-import CommentVote from "../CommentVote";
+import CommentVote from "./CommentVote";
 
 type Props = {
   comment: MyComment;
