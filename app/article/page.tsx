@@ -1,8 +1,8 @@
 
 import fetchArticle from "@/lib/fetchArticle";
 import { notFound } from "next/navigation";
-import CommentList from "./CommentList";
-import CommentAdder from "./CommentAdder";
+import CommentList from "../CommentList";
+import CommentAdder from "../CommentAdder";
 import fetchCommentsByArticleId from "@/lib/fetchCommentsByArticleId";
 
 type Props = {
