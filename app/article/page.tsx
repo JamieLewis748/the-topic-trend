@@ -1,5 +1,3 @@
-
-import fetchArticle from "@/lib/fetchArticle";
 import { notFound } from "next/navigation";
 import CommentList from "../CommentList";
 import CommentAdder from "../CommentAdder";
@@ -17,30 +15,28 @@ async function ArticlePage({ searchParams }: Props) {
 
     const article: Article = searchParams;
 
-    const { article_id } = article;
-    const articleById = await fetchArticle(article_id);
-    const comments: MyComment[] = await fetchCommentsByArticleId(article_id);
+    const comments: MyComment[] = await fetchCommentsByArticleId(article.article_id);
 
 
     return (
         <article>
             <section className="flex flex-col lg:flex-row pb-5 px-0 lg:px-10 border-slate-400	">
-                {articleById.article_img_url && (
+                {article.article_img_url && (
                     <img
                         className="h-50 max-w-md mx-auto md:max-w-lg lg:max-w-xl object-cover rounded-lg shadow-md"
-                        src={articleById.article_img_url}
-                        alt={articleById.title} />
+                        src={article.article_img_url}
+                        alt={article.title} />
                 )}
                 <div className="px-10">
                     <h1 className="headerTitle px-0 no-underline pb-2">
-                        {articleById.title}
+                        {article.title}
                     </h1>
 
                     <div className="flex divide-x-2 space-x-4 ">
-                        <h2 className="font-bold">By: {articleById.author}</h2>
-                        <p className="pl-4">{new Date(articleById.created_at).toLocaleDateString()} {new Date(articleById.created_at).toLocaleTimeString()}</p>
+                        <h2 className="font-bold">By: {article.author}</h2>
+                        <p className="pl-4">{new Date(article.created_at).toLocaleDateString()} {new Date(article.created_at).toLocaleTimeString()}</p>
                     </div>
-                    <p className="pt-4 pb-20">{articleById.body}</p>
+                    <p className="pt-4 pb-20">{article.body}</p>
                 </div>
             </section>
             <CommentAdder />
