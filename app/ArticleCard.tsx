@@ -7,7 +7,7 @@ type Props = {
     article: Article;
 };
 
-function Article({ article }: Props) {
+function ArticleCard({ article }: Props) {
 
     return (
         <article className="bg-slate-200 dark:bg-slate-800 flex flex-col rounded-lg shadow-lg hover:scale-105 hover:shadow-lg hover:bg-slate-200 transition-all duration-200 ease-out">
@@ -44,4 +44,4 @@ function Article({ article }: Props) {
     );
 }
 
-export default Article;;
+export default ArticleCard;;
