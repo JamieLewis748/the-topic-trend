@@ -19,7 +19,7 @@ async function ArticlePage({ searchParams }: Props) {
 
     const { article_id } = article;
     const articleById = await fetchArticle(article_id);
-    const comments: CommentList = await fetchCommentsByArticleId(article_id);
+    const comments: MyComment[] = await fetchCommentsByArticleId(article_id);
 
 
     return (
