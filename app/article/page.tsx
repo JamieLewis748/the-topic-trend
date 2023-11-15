@@ -7,7 +7,7 @@ type Props = {
     searchParams?: Article;
 };
 
-function ArticlePage({ searchParams }: Props) {
+async function ArticlePage({ searchParams }: Props) {
     if (
         (searchParams && Object.entries(searchParams).length === 0) ||
         !searchParams
@@ -17,7 +17,7 @@ function ArticlePage({ searchParams }: Props) {
 
     const article: Article = searchParams;
 
-    // const comments: MyComment[] = await fetchCommentsByArticleId(article.article_id);
+    const comments: MyComment[] = await fetchCommentsByArticleId(article.article_id);
 
 
     return (
@@ -33,7 +33,6 @@ function ArticlePage({ searchParams }: Props) {
                     <h1 className="headerTitle px-0 no-underline pb-2">
                         {article.title}
                     </h1>
-
                     <div className="flex divide-x-2 space-x-4 ">
                         <h2 className="font-bold">By: {article.author}</h2>
                         <p className="pl-4">{new Date(article.created_at).toLocaleDateString()} {new Date(article.created_at).toLocaleTimeString()}</p>
@@ -41,8 +40,8 @@ function ArticlePage({ searchParams }: Props) {
                     <p className="pt-4 pb-20">{article.body}</p>
                 </div>
             </section>
-            {/* <CommentAdder />
-            <CommentList comments={comments} /> */}
+            <CommentAdder />
+            <CommentList comments={comments} />
             {/*add votes section*/}
         </article>
     );
