@@ -8,7 +8,7 @@ type Props = {
 
 function CommentCard({ comment }: Props) {
   return (
-    <main className="relative flex max-w-5xl items-center space-x-2 space-y-8">
+    <main className="relative flex-col w-5xl items-center  space-x-2 space-y-8">
       <div>
         {/* <img
         src={comment.author}
@@ -23,8 +23,8 @@ function CommentCard({ comment }: Props) {
         </p>
         <p className="pb-2">{comment.body}</p>
         <CommentVote comment={comment} />
-        <div className="mt-3 w-2/3 h-0.5 mx-auto bg-gray-700 "></div>
       </div>
+      <div className="align-center mt-3 w-2/3 h-0.5  bg-gray-700 "></div>
     </main >
   );
 }
