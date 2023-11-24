@@ -10,7 +10,7 @@ type Props = {
 function ArticleCard({ article }: Props) {
 
     return (
-        <article className="bg-slate-200 dark:bg-slate-800 flex flex-col rounded-lg shadow-lg hover:scale-105 hover:shadow-lg hover:bg-slate-200 transition-all duration-200 ease-out">
+        <article className="bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-400 flex flex-col rounded-lg shadow-lg hover:scale-105 hover:shadow-lg hover:bg-slate-300 transition-all duration-200 ease-out">
             {article.article_img_url && (
                 <img
                     src={article.article_img_url}
@@ -24,7 +24,7 @@ function ArticleCard({ article }: Props) {
                     <section className="mt-2 flex-1">
                         <p className="text-xs line-clamp-6"></p>
                     </section>
-                    <footer className="text-xs flex space-x-1 items-center pt-5 italic text-gray-400">
+                    <footer className="text-xs flex space-x-1 items-center pt-5 italic text-gray-600 ">
                         <div className="flex items-center">
                             <ChatBubbleLeftIcon className="h-5" />
                             <p className="ml-1">{article.comment_count}</p>
