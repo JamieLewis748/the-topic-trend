@@ -1,10 +1,18 @@
 'use client';
 
 import { useUser } from "@/context/userContext";
+import { MouseEventHandler } from "react";
+
 
 
 function CommentAdder() {
   const { user } = useUser();
+
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.preventDefault();
+  };
+
+
 
   return (
     <div className="p-5 pl-16 max-w-6xl">
@@ -18,13 +26,13 @@ function CommentAdder() {
           placeholder={user ? 'What are your thoughts?' : 'Please sign in to leave a comment'}
         />
         <button
+          disabled={!user}
           type="submit"
+          onClick={handleClick}
           className="h-10 rounded-lg bg-slate-900 font-semibold text-white dark:bg-slate-600 disabled:bg-gray-200">
           Comment
         </button>
       </form>
-
-
     </div>
   );
 }
